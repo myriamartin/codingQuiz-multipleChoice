@@ -109,6 +109,7 @@ submit.addEventListener("click", saveInitials);
 function saveInitials(e) {
   e.preventDefault();
   initialsInput = initials.value;
+  //console.log(initials.value)
   finalScore.textContent = score;
   // Object to score the current users initials
   let endScore = finalScore.textContent;
@@ -120,10 +121,10 @@ function saveInitials(e) {
   if (localStorage.getItem("usersData") === null) {
     usersData = [];
   } else {
+    //to pull out the JavaCript object from the string
     usersData = JSON.parse(localStorage.getItem("usersData"));
   }
   usersData.push(userData);
-  //console.log(initials.value)
-  // Save to local storage into an string
+  // Save to localStorage convert a JavaCript object into an string
   localStorage.setItem("usersData", JSON.stringify(usersData));
 }
