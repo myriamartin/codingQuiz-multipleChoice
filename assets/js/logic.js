@@ -9,8 +9,8 @@ let endScreen = document.querySelector("#end-screen");
 let finalScore = document.querySelector("#final-score");
 let quizTimer = document.querySelector("#time");
 let submit = document.querySelector("#submit");
-let initials = document.querySelector("#initials");
-
+let initialsInput = document.querySelector("#initials");
+//audio files
 let audioCorrect = new Audio("sfx/correct.wav");
 let audioIncorrect = new Audio("sfx/incorrect.wav");
 
@@ -94,9 +94,31 @@ function showResults() {
   hideSection(questionContainerEl);
   hideSection(feedbackContainerEl);
   endScreen.removeAttribute("class");
-  console.log(endScreen);
 }
 
 function hideSection(element) {
   element.setAttribute("class", "hide");
+}
+
+//SAVE INICTIALS FUNCTION
+
+submit.addEventListener("click", saveInitials);
+
+function saveInitials(e) {
+  e.preventDefault();
+  initialsInput = initials.value;
+  // Object to score the current users initials
+  let userData = { initials: initialsInput };
+  // Array to store users data
+  let usersData;
+
+  if (localStorage.getItem("usersData") === null) {
+    usersData = [];
+  } else {
+    usersData = JSON.parse(localStorage.getItem("usersData"));
+  }
+  usersData.push(userData);
+  //console.log(initials.value)
+  // Save to local storage
+  localStorage.setItem("usersData", JSON.stringify(usersData));
 }
