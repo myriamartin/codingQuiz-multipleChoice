@@ -11,6 +11,9 @@ let quizTimer = document.querySelector("#time");
 let submit = document.querySelector("#submit");
 let initials = document.querySelector("#initials");
 
+let audioCorrect = new Audio("sfx/correct.wav");
+let audioIncorrect = new Audio("sfx/incorrect.wav");
+
 //DECLARE TIMER GLOBALLY
 let time = 90;
 
@@ -71,9 +74,11 @@ function checkAnswer(e) {
   if (selectedAnswer === correctAnswer) {
     feedbackContainerEl.classList.remove("hide");
     feedbackContainerEl.textContent = "Correct!";
+    audioCorrect.play();
   } else {
     feedbackContainerEl.classList.remove("hide");
-    feedbackContainerEl.textContent = "Incorrect";
+    feedbackContainerEl.textContent = "Incorrect!";
+    audioIncorrect.play();
   }
   renderQuestion(runningQuestionIndex++);
 }
