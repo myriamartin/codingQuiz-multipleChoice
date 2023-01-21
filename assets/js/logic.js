@@ -95,6 +95,7 @@ function showResults() {
   hideSection(questionContainerEl);
   hideSection(feedbackContainerEl);
   endScreen.removeAttribute("class");
+  finalScore.textContent = score;
 }
 
 function hideSection(element) {
