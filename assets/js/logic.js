@@ -127,4 +127,5 @@ function saveInitials(e) {
   usersData.push(userData);
   // Save to localStorage convert a JavaCript object into an string
   localStorage.setItem("usersData", JSON.stringify(usersData));
+  window.location.href = "highscores.html";
 }
