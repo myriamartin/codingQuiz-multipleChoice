@@ -14,8 +14,8 @@ let initialsInput = document.querySelector("#initials");
 let audioCorrect = new Audio("sfx/correct.wav");
 let audioIncorrect = new Audio("sfx/incorrect.wav");
 
-//DECLARE TIMER GLOBALLY
-let time = 90;
+//DECLARE SCORE GLOBALLY
+let score = 0;
 
 //DECLARE CURRENT QUESTION GLOBALLY
 let runningQuestionIndex = 0;
@@ -79,6 +79,7 @@ function checkAnswer(e) {
   if (selectedAnswer === correctAnswer) {
     feedbackContainerEl.textContent = "Correct!";
     audioCorrect.play();
+    score++;
   } else {
     feedbackContainerEl.textContent = "Incorrect!";
     audioIncorrect.play();
@@ -107,8 +108,11 @@ submit.addEventListener("click", saveInitials);
 function saveInitials(e) {
   e.preventDefault();
   initialsInput = initials.value;
+  finalScore.textContent = score;
   // Object to score the current users initials
-  let userData = { initials: initialsInput };
+  let endScore = finalScore.textContent;
+  let userData = { initials: initialsInput, score: endScore };
+
   // Array to store users data
   let usersData;
 
@@ -119,6 +123,6 @@ function saveInitials(e) {
   }
   usersData.push(userData);
   //console.log(initials.value)
-  // Save to local storage
+  // Save to local storage into an string
   localStorage.setItem("usersData", JSON.stringify(usersData));
 }
