@@ -66,8 +66,14 @@ function checkAnswer(e) {
   console.log(selectedAnswer);
   let correctAnswer = myQuiz[runningQuestionIndex].correct;
   console.log(correctAnswer);
+
+  //Display feedback
   if (selectedAnswer === correctAnswer) {
-    renderQuestion(runningQuestionIndex++);
+    feedbackContainerEl.classList.remove("hide");
+    feedbackContainerEl.textContent = "Correct!";
+  } else {
+    feedbackContainerEl.classList.remove("hide");
+    feedbackContainerEl.textContent = "Incorrect";
   }
-  
+  renderQuestion(runningQuestionIndex++);
 }
