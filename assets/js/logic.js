@@ -7,7 +7,7 @@ let questionChoicesEl = document.querySelector("#choices");
 let feedbackContainerEl = document.querySelector("#feedback");
 let endScreen = document.querySelector("#end-screen");
 let finalScore = document.querySelector("#final-score");
-let quizTimer = document.querySelector("#time");
+let timerCount = document.querySelector("#time");
 let submit = document.querySelector("#submit");
 let initialsInput = document.querySelector("#initials");
 //audio files
@@ -16,6 +16,9 @@ let audioIncorrect = new Audio("sfx/incorrect.wav");
 
 //DECLARE SCORE GLOBALLY
 let score = 0;
+
+//DECLARE TIMER GLOBALLY
+let timeRemaining = 0;
 
 //DECLARE CURRENT QUESTION GLOBALLY
 let runningQuestionIndex = 0;
@@ -26,10 +29,29 @@ let lastQuestionIndex = myQuiz.length - 1;
 // Will store the textContent of possible answers
 let userChoice = "";
 
+//SETINTERVAL FUNCTION
+function startTimer() {
+  timeRemaining = 60;
+
+  timerInterval = setInterval(function () {
+    timerCount.textContent = timeRemaining;
+    timeRemaining--;
+
+    if (timeRemaining <= 0) {
+      showResults();
+    }
+  }, 1000);
+}
+
+function endTimer() {
+  clearInterval(timerInterval);
+  timerCount.textContent = 0;
+}
 //START QUIZ
 
 startBtn.addEventListener("click", startQuiz);
 function startQuiz() {
+  startTimer();
   // Checks if the start section has a class of hide, and if not appends it to it's current class
   if ((startScreen.getAttribute !== "class", "hide")) {
     startScreen.setAttribute("class", "hide start");
@@ -45,6 +67,7 @@ function startQuiz() {
 //RENDER THE QUESTION
 function renderQuestion() {
   if (runningQuestionIndex === lastQuestionIndex) {
+    endTimer();
     showResults();
   } else {
     let question = myQuiz[runningQuestionIndex].question;
@@ -83,6 +106,7 @@ function checkAnswer(e) {
   } else {
     feedbackContainerEl.textContent = "Incorrect!";
     audioIncorrect.play();
+    timeRemaining -= 10;
   }
   renderQuestion(runningQuestionIndex++);
   //display end screen
@@ -127,5 +151,5 @@ function saveInitials(e) {
   usersData.push(userData);
   // Save to localStorage convert a JavaCript object into an string
   localStorage.setItem("usersData", JSON.stringify(usersData));
-  window.location.href = "highscores.html";
+  window.location.href = "./highscores.html";
 }
