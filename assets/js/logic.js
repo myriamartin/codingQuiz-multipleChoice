@@ -13,7 +13,7 @@ let initialsInput = document.querySelector("#initials");
 //audio files
 let audioCorrect = new Audio("sfx/correct.wav");
 let audioIncorrect = new Audio("sfx/incorrect.wav");
-
+console.log(timerCount);
 //DECLARE SCORE GLOBALLY
 let score = 0;
 
@@ -39,6 +39,7 @@ function startTimer() {
 
     if (timeRemaining <= 0) {
       showResults();
+      return;
     }
   }, 1000);
 }

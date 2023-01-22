@@ -1,88 +1,85 @@
-# Module 6 Challenge Web APIs: Code Quiz
+<!-- PROJECT LOGO -->
 
-## Your Task
+<a name="readme-top"></a>
 
-As you proceed in your journey to becoming a front-end web developer, it’s likely that you’ll be asked to complete a coding assessment, perhaps as part of an interview process. A typical coding assessment is a combination of multiple-choice questions and interactive coding challenges. 
+<div align="center">
+    <img src="./assets/img/document_icon.png" alt="readme doc icon" width="150">
 
-To help you become familiar with these tests and give you a chance to apply the skills from this module, this week’s challenge invites you to build a timed coding quiz with multiple-choice questions. This app will run in the browser, and will feature dynamically updated HTML and CSS powered by JavaScript code that you write. It will have a clean, polished, and responsive user interface. This week’s coursework has taught you all the skills you need to succeed in this challenge.
+  <h3 align="center">Web APIs: Quiz App</h3>
 
+  <p align="center">
+        <a href="https://myriamartin.github.io/codingQuiz-multipleChoice/"><strong> Deployed Project Repo Link</strong></a>
+    <br />
+    <br />
+   
+  </p>
+</div>
 
-## User Story
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+     <li><a href="#usage">Usage</a></li>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+     <li><a href="#contact">Author</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
+  </ol>
+</details>
 
-```
-AS A coding boot camp student
-I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
-SO THAT I can gauge my progress compared to my peers
-```
+<!-- ABOUT THE PROJECT -->
 
-## Acceptance Criteria
+## About The Project
 
-Create a code quiz that contains the following requirements:
+This multiple-choice questions quiz timed application will run in the browser, and will feature dynamically updated HTML and CSS powered by JavaScript.
 
-* A start button that when clicked a timer starts and the first question appears.
- 
-  * Questions contain buttons for each answer.
-  * 
-  * When answer is clicked, the next question appears
-  * 
-  * If the answer clicked was incorrect then subtract time from the clock
+<!-- USAGE EXAMPLES -->
 
-* The quiz should end when all questions are answered or the timer reaches 0.
+## Usage
 
-  * When the game ends, it should display their score and give the user the ability to save their initials and their score
-  
-## Mock-Up
+The following image illustrates the interface design and functionality of the web application:<br>
 
-The following animation demonstrates the application functionality:
+<div align="center">
 
-![Animation of code quiz. Presses button to start quiz. Clicks the button for the answer to each question, displays if answer was correct or incorrect. Quiz finishes and displays high scores. User adds their intials, then clears their intials and starts over.](./assets/08-web-apis-challenge-demo.gif)
+<img alt ="quiz app usage" width="750" align="center" src="./assets/img/Quiz-app-MM.gif" alt="app usage" ></div><br>
 
-## Grading Requirements
+Once the user presses the button to start the quiz, they have a limited time of 60 seconds to answer the questions. They will be notified if the answer they selected is correct or incorrect. If the answer is incorrect, the timer will subtract 10 seconds. Once the quiz is over they'll get their final score. Users will be able to add their initials, and compare their final score with the rest of the players on the score ranking page. They can then clear their initials and start over.
 
-This challenge is graded based on the following criteria: 
+<br>
 
-### Technical Acceptance Criteria: 40%
+## Built With
 
-* Satisfies all of the above acceptance criteria.
+<div align="center">
 
-### Deployment: 32%
+| <img width="" height="50" align="center" src="./assets/img/html5_logo.png" alt="html logo" >
+| <img width="" height="50" align="center" src="./assets/img/css3-logo.png" alt="css logo" >
+| <img width="" height="40" align="center" src="./assets/img/js-logo.png" alt="js logo" >
+| <img width="" height="40" align="center" src="./assets/img/git-logo.png" alt="git logo" >
+| <img width="" height="40" align="center" src="./assets/img/vscode-logo.png" alt="git logo" >
 
-* Application deployed at live URL.
+</div>
 
-* Application loads with no errors.
+<!-- CONTACT -->
 
-* Application GitHub URL submitted.
+## Author
 
-* GitHub repository that contains application code.
+Myriam Martin edX Student - frontend developer wannabe 🙋🏻‍♀️💻
 
-### Application Quality: 15%
+- [Project Repo Link](https://github.com/myriamartin/codingQuiz-multipleChoice) <br>
+- [Deployed Project Repo Link](https://myriamartin.github.io/codingQuiz-multipleChoice/)
 
-* Application user experience is intuitive and easy to navigate.
+<!-- ACKNOWLEDGMENTS -->
 
-* Application user interface style is clean and polished.
+## Acknowledgments
 
-* Application resembles the mock-up functionality provided in the challenge instructions.
-
-### Repository Quality: 13%
-
-* Repository has a unique name.
-
-* Repository follows best practices for file structure and naming conventions.
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages.
-
-* Repository contains quality README file with description, screenshot, and link to deployed application.
-
-
-## Review
-
-You are required to submit BOTH of the following for review:
-
-* The URL of the functional, deployed application.
-
-* The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
-
----
-© 2022 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+- [edX Front-End Web Development Boot Camp](https://skillsforlife.edx.org/)
+- edX Front-End Web Development Boot Camp supplemental resources
+- [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Learn/JavaScript)
+- [W3Schools](https://www.w3schools.com/)
+- [Stackoverflow](https://stackoverflow.com/)
+- [othneildrew Best Readme Templates](https://github.com/othneildrew/Best-README-Template)
+- [GitHub Pages](https://pages.github.com)
