@@ -143,6 +143,7 @@ function saveInitials(e) {
   // Checks for an empty value
   if (initialsInput === "") {
     alert("You must enter at least 1 character to submit your score.");
+    return;
   }
   // Array to store users data
   let usersData;
