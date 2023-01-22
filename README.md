@@ -41,7 +41,7 @@ This multiple-choice questions quiz timed application will run in the browser, a
 
 ## Usage
 
-The following image illustrates the interface design and functionality of the web application:<br>
+The following image illustrates the interface design and functionality of the web application:<br><br>
 
 <div align="center">
 

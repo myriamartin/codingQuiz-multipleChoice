@@ -140,6 +140,10 @@ function saveInitials(e) {
   let endScore = finalScore.textContent;
   let userData = { initials: initialsInput, score: endScore };
 
+  // Checks for an empty value
+  if (initialsInput === "") {
+    alert("You must enter at least 1 character to submit your score.");
+  }
   // Array to store users data
   let usersData;
 
